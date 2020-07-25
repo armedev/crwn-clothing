@@ -23,6 +23,7 @@
 
     & .bg-image {
       transform: scale(1.5);
+      transition: transform 6s cubic-bezier(0.35, 0.45, 0.45, 0.8);
     }
 
     & .content {
@@ -39,7 +40,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    transition: transform 6s cubic-bezier(0.35, 0.45, 0.45, 0.8);
+    transition: transform 3s cubic-bezier(0.35, 0.45, 0.45, 0.8);
   }
 
   .content {
