@@ -1,9 +1,11 @@
 import React from "react";
 
 import "./sign-in.styles.scss";
+import { ReactComponent as Google } from "../../assets/google.svg";
 
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
+import { signInWithGoogle } from "../../firebase/firebase.utils";
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -48,7 +50,11 @@ class SignIn extends React.Component {
             handleChange={this.handleChange}
             label="Password"
           />
-          <CustomButton type="submit">Sign In</CustomButton>
+          <span className="container">
+            <CustomButton type="submit">Sign In</CustomButton>
+            <span className="or-span">OR</span>
+            <Google className="google-img" onClick={signInWithGoogle} />
+          </span>
         </form>
       </div>
     );
