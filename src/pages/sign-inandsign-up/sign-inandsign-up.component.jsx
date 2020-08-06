@@ -1,10 +1,12 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
+
+import { connect } from "react-redux";
 
 import "./sign-inandsign-up.styles.scss";
 
 import SignIn from "../../components/sign-in/sign-in.component";
 import SignUp from "../../components/sign-up/sign-up.component";
-import { Redirect } from "react-router-dom";
 
 const SignInandSignUpPage = ({ currentUser }) => {
   if (currentUser) {
@@ -18,4 +20,8 @@ const SignInandSignUpPage = ({ currentUser }) => {
   );
 };
 
-export default SignInandSignUpPage;
+const mapStateToProps = (state) => ({
+  currentUser: state.user.currentUser,
+});
+
+export default connect(mapStateToProps)(SignInandSignUpPage);
