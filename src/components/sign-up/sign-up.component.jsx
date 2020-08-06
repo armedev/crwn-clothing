@@ -23,26 +23,30 @@ class SignUp extends React.Component {
 
     const { displayName, email, password, confirmPassword } = this.state;
 
-    if (password !== confirmPassword) {
-      alert("passwords don't match");
-      return;
-    }
+    if (password === confirmPassword && password.length >= 6) {
+      try {
+        const { user } = await auth.createUserWithEmailAndPassword(
+          email,
+          password
+        );
+        await createUserProfileDocument(user, { displayName });
 
-    try {
-      const { user } = await auth.createUserWithEmailAndPassword(
-        email,
-        password
+        this.setState({
+          displayName: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+        });
+      } catch (error) {
+        console.log(error);
+        alert(error.message);
+      }
+    } else {
+      alert(
+        password.length >= 6
+          ? "password don`t match"
+          : "password length should be greater than 6"
       );
-      await createUserProfileDocument(user, { displayName });
-
-      this.setState({
-        displayName: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-      });
-    } catch (error) {
-      console.log(error);
     }
   };
 
