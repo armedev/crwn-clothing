@@ -2,6 +2,7 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
+//config data obtained from firebase
 const config = {
   apiKey: "AIzaSyA--_P4-1QRXQQJAxajpFTxL3m0SUzPGQE",
   authDomain: "crwn-clothing-640bb.firebaseapp.com",
@@ -13,6 +14,7 @@ const config = {
   measurementId: "G-YWWYX2HL43",
 };
 
+//creates and stores the user data in database
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
@@ -37,14 +39,17 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
+//GOOGLE AUTHENTICATION SETUP
+const Provider = new firebase.auth.GoogleAuthProvider();
+Provider.setCustomParameters({ prompt: "select_account" });
+
+//***** */
+//initialize app and export firebase requirements
+//***** */
 firebase.initializeApp(config);
+export default firebase;
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-const Provider = new firebase.auth.GoogleAuthProvider();
-Provider.setCustomParameters({ prompt: "select_account" });
-
 export const signInWithGoogle = () => auth.signInWithPopup(Provider);
-
-export default firebase;
