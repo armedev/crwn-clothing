@@ -1,0 +1,25 @@
+.collection-page {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+
+  .title {
+    font-size: 38px;
+    margin: 0 auto 30px;
+  }
+  .items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin: auto;
+
+    .collection-item {
+      margin-bottom: 30px;
+      height: 500px;
+      width: 22vw;
+      .custom-button {
+        top: 370px;
+      }
+    }
+  }
+}
