@@ -25,14 +25,22 @@
   }
   .checkout-items {
     width: 100%;
-    height: 600px;
+    height: 500px;
     overflow-y: scroll;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
     &::-webkit-scrollbar {
       display: none;
     }
-
+    .checkout-item {
+      height: 200px;
+      .image-container {
+        height: 100%;
+        img {
+          object-fit: contain;
+        }
+      }
+    }
     .empty {
       margin: 100px auto;
       height: 500px;
@@ -47,5 +55,10 @@
     margin-top: 30px;
     margin-left: auto;
     font-size: 36px;
+  }
+  .warning {
+    color: red;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
 }

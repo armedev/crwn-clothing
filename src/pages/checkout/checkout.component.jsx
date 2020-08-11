@@ -11,6 +11,7 @@ import {
 } from "../../redux/cart/cart.selectors";
 import CustomButton from "../../components/custom-button/custom-button.component";
 import CheckoutItem from "../../components/checkout-item/checkout-item.component";
+import StripeCheckoutButton from "../../components/stripe-button/stripe-button.component";
 
 const checkoutPage = ({ cartItems, history, total }) => {
   return (
@@ -47,6 +48,12 @@ const checkoutPage = ({ cartItems, history, total }) => {
       <div className="total">
         <span>TOTAL: ${total}</span>
       </div>
+      <div className="warning">
+        This Is A Test Stripe Integration payment please use the following test
+        card to see the flow <br />
+        cardNO: 4242 4242 4242 4242 EXP: 01/30 CVV: 123
+      </div>
+      <StripeCheckoutButton price={total} />
     </div>
   );
 };
