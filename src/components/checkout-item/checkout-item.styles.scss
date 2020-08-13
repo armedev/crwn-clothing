@@ -10,6 +10,7 @@
   .image-container {
     width: 20%;
     padding-right: 15px;
+    padding-left: 30px;
 
     img {
       width: 100%;
@@ -25,6 +26,8 @@
 
   .quantity {
     display: flex;
+    align-items: center;
+    justify-content: center;
 
     .arrow {
       cursor: pointer;
@@ -35,7 +38,8 @@
   }
 
   .remove-button {
-    padding-left: 12px;
+    margin-left: auto;
+    margin-right: auto;
     cursor: pointer;
   }
 }

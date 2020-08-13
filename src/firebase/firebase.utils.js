@@ -51,7 +51,6 @@ export default firebase;
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
-
 export const signInWithGoogle = () => auth.signInWithPopup(Provider);
 
 //***************USED ONLY TO PUSH DATA***************
