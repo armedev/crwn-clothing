@@ -20,7 +20,7 @@ const Shop = ({ updateCollections, match }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log("i am called");
+    // console.log("i am called");
     const unSubscribeFromSnapshot = firestore
       .collection("collections")
       .onSnapshot(async (snapshot) => {
@@ -29,7 +29,7 @@ const Shop = ({ updateCollections, match }) => {
         setLoading(false);
       });
     return () => {
-      console.log("i am unmounted");
+      // console.log("i am unmounted");
       unSubscribeFromSnapshot();
     };
   }, [updateCollections]);
