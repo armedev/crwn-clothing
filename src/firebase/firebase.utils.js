@@ -51,7 +51,12 @@ export default firebase;
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
-export const signInWithGoogle = () => auth.signInWithPopup(Provider);
+export const signInWithGoogle = async (setIsLoading) => {
+  setIsLoading(true);
+  const signInGoogle = await auth.signInWithPopup(Provider);
+  setIsLoading(false);
+  return signInGoogle;
+};
 
 //***************USED ONLY TO PUSH DATA***************
 //creating the store in firebase and add items

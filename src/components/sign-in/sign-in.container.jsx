@@ -31,7 +31,7 @@ const SignInContainer = ({ setIsLoading }) => {
     <SignIn
       handleChange={handleChange}
       handleSubmit={handleSubmit}
-      signInWithGoogle={signInWithGoogle}
+      signInWithGoogle={() => signInWithGoogle(setIsLoading)}
       {...userCredentials}
     />
   );
