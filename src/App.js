@@ -9,7 +9,7 @@ import HomePage from "./pages/homepage/homepage.component.jsx";
 import Shop from "./pages/shoppage/shop.component.jsx";
 import checkoutPage from "./pages/checkout/checkout.component";
 import Header from "./components/header/header.component.jsx";
-import SignInandSignUpPage from "./pages/sign-inandsign-up/sign-inandsign-up.component.jsx";
+import SignInandSignUpPageContainer from "./pages/sign-inandsign-up/sign-inandsign-up.container";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selectors";
@@ -54,7 +54,7 @@ class App extends React.Component {
               this.props.currentUser ? (
                 <Redirect to="/" />
               ) : (
-                <SignInandSignUpPage />
+                <SignInandSignUpPageContainer />
               )
             }
           />
