@@ -1,0 +1,32 @@
+.header {
+  height: 70px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px auto 25px auto;
+
+  .logo-container {
+    height: 100%;
+    width: 70px;
+    padding: 25px;
+  }
+
+  .options {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    .option {
+      padding: 20px 15px 0px 15px;
+      font-size: 18px;
+      cursor: pointer;
+      color: #4a4a4a;
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
+}

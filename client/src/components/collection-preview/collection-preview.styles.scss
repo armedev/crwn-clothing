@@ -1,0 +1,40 @@
+.collection-preview {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 10px auto 80px auto;
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    position: relative;
+    &:hover .pointer {
+      animation: left-to-right 1s ease-in forwards;
+    }
+    .pointer {
+      position: absolute;
+      opacity: 0;
+
+      @keyframes left-to-right {
+        0% {
+          right: 90%;
+          opacity: 1;
+        }
+        60% {
+          right: 10%;
+          opacity: 1;
+        }
+        100% {
+          right: 0%;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .preview {
+    display: flex;
+    justify-content: space-between;
+  }
+}
