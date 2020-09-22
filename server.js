@@ -32,7 +32,7 @@ app.post("/payment", async (req, res) => {
   await stripe.charges.create(
     {
       amount: req.body.amount,
-      currency: "inr",
+      currency: "usd",
       source: req.body.token.id,
       description: "My First Test Charge",
     },
